@@ -1,23 +1,24 @@
-apiVersion: argoproj.io/v1alpha1
+apiVersion: argoproj.io/v1alpha1  # look for argocd for updated definition 
 kind: Application
 metadata:
   name: myapp-argo-application
-  namespace: argocd
+  namespace: argocd                # namespace used by argocd agent
 spec:
   project: default
 
+  # Mapping section for git source and Target in K8s
   source:
-    repoURL: https://github.com/arocks-ai/argocd-demo-projects2.git
+    repoURL: https://github.com/arocks-ai/argocd-demo-projects2.git   # Application source path
     targetRevision: HEAD
-    path: dev
+    path: dev   # source directory
   destination: 
-    server: https://kubernetes.default.svc
-    namespace: myapp
+    server: https://kubernetes.default.svc    # API server DNS name for local setup
+    namespace: myapp                          # Namespace for Application code
 
   syncPolicy:
     syncOptions:
-    - CreateNamespace=true
+    - CreateNamespace=true      # Create Application namespace if not exits before
 
     automated:
-      selfHeal: true
-      prune: true
+      selfHeal: true    # overwrite manual changes (with git code base)
+      prune: true       # renaming and deleting the code makes delete from cluster 

@@ -1,11 +1,11 @@
-#### Commands
+#### Commands to install and open ArgoCD UI 
 
 ```bash
 # 1. install ArgoCD in k8s
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
-# 1.1 verify the ArgoCD pods running state, look for argo-cd-server ports
+# 1.1 verify the ArgoCD pods running state, look for argo-cd-server pods
 kubectl get pods -n argocd
 
 # 2. access ArgoCD UI, forward port to 8080 to access from local system 
@@ -24,6 +24,18 @@ http://localhost:8080/
 ```
 </br>
 
+#### command to deploy the application 
+
+```bash
+# 1. log into the K8 cluster
+minikube start 
+
+# 2. install ArgoCD in k8s
+kubectl apply -f application.yaml
+
+```
+
+</br>
 #### Links
 
 * Config repo: [https://gitlab.com/nanuchi/argocd-app-config](https://gitlab.com/nanuchi/argocd-app-config)
