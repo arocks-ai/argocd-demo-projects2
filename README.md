@@ -1,4 +1,4 @@
-#### Commands to install and open ArgoCD UI 
+#### ArgoCD install and view from UI
 
 ```bash
 # 1. install ArgoCD in k8s
@@ -20,11 +20,9 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 # 3.1 Open browser and enter the ArgoCD UI URL 
 http://localhost:8080/
 
-
 ```
-</br>
 
-#### command to deploy the application 
+#### Deploy dev application 
 
 ```bash
 # 1. log into the K8 cluster
@@ -33,9 +31,10 @@ minikube start
 # 2. install ArgoCD in k8s
 kubectl apply -f application.yaml
 
-```
 
+```
 </br>
+
 #### Links
 
 * Config repo: [https://gitlab.com/nanuchi/argocd-app-config](https://gitlab.com/nanuchi/argocd-app-config)

@@ -1,3 +1,6 @@
+##
+## ArgoCD dev project config
+##
 apiVersion: argoproj.io/v1alpha1  # look for argocd for updated definition 
 kind: Application
 metadata:
