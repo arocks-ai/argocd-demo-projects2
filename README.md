@@ -31,8 +31,12 @@ minikube start
 # 2. install ArgoCD in k8s
 kubectl apply -f application.yaml
 
-
 ```
+
+#### Test dev application 
+update dev/application.yaml for image name or some thing and verify that ArgoCD pulls dynamically
+
+
 </br>
 
 #### Links
